@@ -168,8 +168,10 @@ def main():
             x1 = tokenizer.texts_to_sequences(x)
             sequencenew = pad_sequences(x1, padding='post', maxlen=max_length)
             prediction = model2.predict(sequencenew)
-            pred = np.argmax(prediction)
-            st.write(pred)
+            prediction = prediction.flatten()
+            st.write(prediction)
+            #pred = np.argmax(prediction)
+            #st.write(pred)
             
             
             st.write('List of words in text:',x)
