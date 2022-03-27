@@ -164,16 +164,16 @@ def main():
         
         x = st.text_area('Enter text here').split()
         
-        #if st.button("Predict"):
-        x1 = tokenizer.texts_to_sequences(x)
-        sequencenew = pad_sequences(x1, padding='post', maxlen=max_length)
-        prediction = model2.predict(sequencenew)
-        prediction = prediction.flatten()
-        st.write(prediction)
+        if st.button("Predict"):
+            x1 = tokenizer.texts_to_sequences(x)
+            sequencenew = pad_sequences(x1, padding='post', maxlen=max_length)
+            prediction = model2.predict(sequencenew)
+            prediction = prediction.flatten()
+            st.write(prediction)
             #pred = np.argmax(prediction)
             #st.write(pred)
             
-        st.write('List of words in text:',x)
+            st.write('List of words in text:',x)
             #if pred == 4:
                 #st.write('Tech topic')
             #if pred == 2:
