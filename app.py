@@ -169,7 +169,7 @@ def main():
             sequencenew = np.asarray(sequencenew).astype('float32')
             prediction = model2.predict(sequencenew)
             pred = np.argmax(prediction)
-
+            st.write(pred)
             
             
             st.write('List of words in text:',x)
