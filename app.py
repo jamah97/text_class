@@ -165,6 +165,9 @@ def main():
         x = st.text_area('Enter text here').split()
         
         if st.button("Predict"):
+            V_S = 10000
+            tokenizer = Tokenizer(num_words = V_S, split=' ') # create tokenizer object
+            tokenizer.fit_on_texts(train_x)
             x1 = tokenizer.texts_to_sequences(x)
             sequencenew = pad_sequences(x1, padding='post', maxlen=max_length)
             st.write(sequencenew.shape)
