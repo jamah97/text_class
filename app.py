@@ -162,9 +162,9 @@ def main():
         history = model2.fit(train_text_padded, train_y, epochs=num_epochs, batch_size = batch, verbose=2, validation_data=(text_text_padded, test_y))
  
         
-
+        x = st.text_area('Enter text here').split()
+        
         if st.button("Predict"):
-            x = st.text_area('Enter text here').split()
             x1 = tokenizer.texts_to_sequences(x)
             sequencenew = pad_sequences(x1, padding='post', maxlen=max_length)
             prediction = model2.predict(sequencenew)
