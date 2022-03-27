@@ -169,11 +169,9 @@ def main():
             sequencenew = pad_sequences(x1, padding='post', maxlen=max_length)
             prediction = model2.predict(sequencenew)
             prediction = prediction.flatten()
-            st.write(sequencenew)
             st.write(prediction)
             #pred = np.argmax(prediction)
             #st.write(pred)
-            st.write(sequencenew)
             
             st.write('List of words in text:',x)
             #if pred == 4:
