@@ -166,7 +166,6 @@ def main():
         
         if st.button("Predict"):
             x1 = tokenizer.texts_to_sequences(x)
-            st.write(x1.shape)
             sequencenew = pad_sequences(x1, padding='post', maxlen=max_length)
             st.write(sequencenew.shape)
             prediction = model2.predict(sequencenew)
