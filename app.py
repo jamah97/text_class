@@ -170,7 +170,7 @@ def main():
             prediction = model2.predict(sequencenew)
             prediction = prediction.flatten()
             #st.write(prediction)
-            pred = np.argmax(prediction)
+            pred = np.max(prediction)
             st.write(pred)
             
             
