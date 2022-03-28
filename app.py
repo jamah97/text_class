@@ -84,5 +84,24 @@ def main():
         #st.write('Mean length in main text for training:',sms_data['v2'].mean())
         #st.write('Min length in main text for training:',sms_data['v2'].min())
 
+        
+        
+    s = st.text_input('Enter text here').split()
+
+    if st.button("Predict"):
+        
+        new_sequences = tok.texts_to_sequences(s)
+        new_sequences1 = pad_sequences(new_sequences,maxlen=max_len)
+        new_sequences1 = np.asarray(new_sequences1).astype('float32')
+        st.write('List of words in text:',s)
+        predicted = model.predict(new_sequences1)
+        pred = np.max(predicted)
+        if pred >= .50:
+            st.write("Email is likly a spam", pred)
+        else:
+            st.write('Email is ham', pred)
+        
+        
+        
 if __name__ == '__main__':
     main()
