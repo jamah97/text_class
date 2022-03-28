@@ -157,11 +157,11 @@ def main():
         history = model2.fit(train_text_padded, train_y, epochs=num_epochs, batch_size = batch, verbose=2, validation_data=(text_text_padded, test_y))
  
         
-        x = st.text_area('Enter text here')
+        x = st.text_area('Enter text here').split()
         
         #if st.button("Predict"):
-        x1 = tokenizer.texts_to_sequences(x)
-        sequencenew = pad_sequences(x1, padding='post', maxlen=max_length)
+        xz = tokenizer.texts_to_matrix(x)
+        sequencenew = pad_sequences(xz, padding='post', maxlen=max_length)
         st.write(sequencenew.shape)
         prediction = model2.predict(sequencenew)
         prediction = prediction.flatten()
