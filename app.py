@@ -95,10 +95,10 @@ def main():
 
 
 #sms_data['c_w'] = sms_data['v2'].apply(lambda x:str(x).split())
-#top = Counter([item for sublist in sms_data['c_w'] for item in sublist])
-#temp = pd.DataFrame(top.most_common(30))
-#temp.columns = ['Common_words','count']
-#st.write(temp)
+        top = Counter([item for sublist in sms_data['v2'] for item in sublist])
+        temp = pd.DataFrame(top.most_common(30))
+        temp.columns = ['Common_words','count']
+        st.write(temp)
 
 
 #if st.button("Predict"):
