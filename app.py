@@ -157,19 +157,20 @@ def main():
         history = model2.fit(train_text_padded, train_y, epochs=num_epochs, batch_size = batch, verbose=2, validation_data=(text_text_padded, test_y))
  
         
-        x = st.text_area('Enter text here').split()
+        typ = st.text_area('Enter text here').split()
         
         #if st.button("Predict"):
-        xz = tokenizer.texts_to_matrix(x)
-        sequencenew = pad_sequences(xz, padding='post', maxlen=max_length)
-        st.write(sequencenew.shape)
-        prediction = model2.predict(sequencenew)
-        prediction = prediction.flatten()
-        st.write(prediction)
+        def pre([typ]):
+            xz = tokenizer.texts_to_matrix(typ)
+            sequencenew = pad_sequences(xz, padding='post', maxlen=max_length)
+            st.write(sequencenew.shape)
+            prediction = model2.predict(sequencenew)
+            prediction = prediction.flatten()
+            st.write(prediction)
             #pred = np.argmax(prediction)
             #st.write(pred)
             
-        st.write('List of words in text:',x)
+            st.write('List of words in text:',x)
             #if pred == 4:
                 #st.write('Tech topic')
             #if pred == 2:
