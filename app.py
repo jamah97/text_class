@@ -169,7 +169,7 @@ def main():
             #pred = np.argmax(prediction)
             #st.write(pred)
             
-        st.write('List of words in text:',x)
+        st.write('List of words in text:',typ)
             #if pred == 4:
                 #st.write('Tech topic')
             #if pred == 2:
