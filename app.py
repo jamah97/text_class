@@ -77,7 +77,7 @@ def main():
         history = model.fit(train_sequences, train_y, epochs=num_epochs, batch_size = batch, verbose=2, validation_data=(test_sequences, test_y))
 
 
-        st.subheader("About the dataset used to train and test model")
+        st.subheader("Text Classifier Predictor with Tensorflow")
         st.write("Datasource: https://www.kaggle.com/datasets/balaka18/email-spam-classification-dataset-csv")
         st.write("About dataset: containing related information of 5172 randomly picked email files and their respective labels for spam or not-spam classification.")
         st.write('There is an imbalance of data. The ham to spam ratio is 6.45 to 1. Even though the accuracy of the model is 89.35% the uneven distribution may result in lots of regular emails being labeled as spam.')
