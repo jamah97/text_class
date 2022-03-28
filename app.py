@@ -86,19 +86,14 @@ def main():
 #st.pyplot()
 
 
-        sms_data['v2'] = sms_data['v2'].apply(lambda x:len(str(x).split()))
+        #sms_data['v2'] = sms_data['v2'].apply(lambda x:len(str(x).split()))
 
-        st.write('Max length in main text for training:',sms_data['v2'].max())
-        st.write('Mean length in main text for training:',sms_data['v2'].mean())
-        st.write('Min length in main text for training:',sms_data['v2'].min())
+        #st.write('Max length in main text for training:',sms_data['v2'].max())
+        #st.write('Mean length in main text for training:',sms_data['v2'].mean())
+        #st.write('Min length in main text for training:',sms_data['v2'].min())
 
 
 
-#sms_data['c_w'] = sms_data['v2'].apply(lambda x:str(x).split())
-        top = Counter([item for sublist in sms_data['v2'] for item in sublist])
-        temp = pd.DataFrame(top.most_common(30))
-        temp.columns = ['Common_words','count']
-        st.write(temp)
 
 
 #if st.button("Predict"):
