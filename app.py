@@ -75,7 +75,7 @@ def main():
     st.subheader("Text Classifier Predictor with Tensorflow")
     st.write("Datasource: https://www.kaggle.com/datasets/balaka18/email-spam-classification-dataset-csv")
     st.write("About dataset: containing related information of 5172 randomly picked email files and their respective labels for spam or not-spam classification.")
-    st.write("In the "Enter Text" section below, enter the header of the email you have received or the first couple of sentences in the email. Afterward, a prediction will be generated, whether it's spam or not. ")
+    st.write("In the 'Enter Text' section below, enter the header of the email you have received or the first couple of sentences in the email. Afterward, a prediction will be generated, whether it's spam or not. ")
     st.write('There is an imbalance of data. The ham to spam ratio is 6.45 to 1. Even though the accuracy of the model is 89.35% the uneven distribution may result in lots of regular emails being labeled as spam.')
     st.write(sms_data.v1.value_counts())
 
@@ -87,7 +87,7 @@ def main():
 
         
         
-    s = st.text_input('Enter text here').split()
+    s = st.text_input('Enter Text').split()
 
     if st.button("Predict"):
         
